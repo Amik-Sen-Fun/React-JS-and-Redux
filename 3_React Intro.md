@@ -54,7 +54,7 @@ const element =
   <div>
     <h1> Task List </h1> 
     <ol>
-      { tasks.map((task, index)=> <li key: {index}> {task} </li>);}
+      { tasks.map((task, index)=> <li key: {index}> {task} </li>)}
     </ol>
   </div>
     // we can write normal JS code and variables inside the curly braces
@@ -80,7 +80,7 @@ class List extends Component{
     render(){
             return (
                 <ol>
-                  { this.props.tasks.map((task, index)=> <li key: {index}> {task} </li>);}
+                  { this.props.tasks.map((task, index)=> <li key: {index}> {task} </li>)}
                 </ol>
             );
     }
