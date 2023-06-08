@@ -70,5 +70,105 @@ Some rule of thumb for defining JSX
 
 # Components 
 
+In React we can create components inside an application that can be resused as and when required. 
 
+```js
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom/client';
+
+class List extends Component{
+    render(){
+            return (
+                <ol>
+                  { this.props.tasks.map((task, index)=> <li key: {index}> {task} </li>);}
+                </ol>
+            );
+    }
+};
+
+class Title extends Component{
+    render(){
+            return ( <h1> Task List </h1> );
+    }
+};
+
+
+class Main extends Component{
+    render(){
+            <Title />                         // Prints the Title of the page 
+            <List tasks = {["eat", "sleep"]}/>  // Prints Task list with "eat" and "sleep" sent as porps
+            <List tasks = {["repeat"]}/>        // Prints Task list with "repeat" sent as props 
+    }
+};
+
+ReactDOM.render(<Main/>, document.getElementById('root')); // renders the element 
+```
+
+But having all components in a single file can make it difficult to manage and handle. For that we use Refactoring. 
+
+# Refactoring 
+
+Now say we make three files inside a new folder named `Components` inside `src` in our React Application named:
+- `List.js`
+- `Title.js`
+- `Main.js`
+
+Now to achieve similar results using different files we do the following 
+- Inside `List.js`
+  ```js
+  import React, {Component} from 'react';
+  
+  class List extends Component{
+        render(){
+                return (
+                    <ol>
+                      { this.props.tasks.map((task, index)=> <li key: {index}> {task} </li>);}
+                    </ol>
+                );
+        }
+    };
+    
+    export default List
+  ```
+- Inside `Title.js`
+  ```js
+  import React, {Component} from 'react';
+  
+  class Title extends Component{
+        render(){
+                return ( <h1> Task List </h1> );
+        }
+    };
+    
+    export default Title
+  ```
+  
+- Inside `Main.js`
+  ```js
+  import React, {Component} from 'react';
+  import List from './List'
+  import Title from './Title'
+  
+  class Main extends Component{
+            render(){
+                <Title />                         // Prints the Title of the page 
+                <List tasks = {["eat", "sleep"]}/>  // Prints Task list with "eat" and "sleep" sent as porps
+                <List tasks = {["repeat"]}/>        // Prints Task list with "repeat" sent as props 
+        }
+    };
+    
+    export default Main
+  ```
+
+Now to use this `Main.js` inside the main application do: 
+
+- Inside `index.js`
+    ```js
+    import React, {Component} from 'react';
+    import ReactDOM from 'react-dom/client';
+    
+    import Main from './Components/Main'
+
+    ReactDOM.render(<Main/>, document.getElementById('root')); // renders the element 
+    ```
 
