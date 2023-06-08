@@ -20,6 +20,7 @@ export default Photowall;
 
 # Statemanagement
 
-Why required? In our application we are using a variable `posts` that contains the data for our application.
-Say we add a new entry or delete an entry. How will the app know which sections to re-render.
-For this we need statemanagement. 
+Why required? 
+- In our application we are using a variable `posts` that contains the data for our application.
+- Say we add a new entry or delete an entry. How will the app know which sections to re-render.
+- For this we need statemanagement. 
