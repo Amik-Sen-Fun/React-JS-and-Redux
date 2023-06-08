@@ -1,0 +1,53 @@
+html {
+  font-size: 10px;
+}
+
+h1{
+  font-family: 'Moirai One', cursive;
+  text-align: center;
+  font-size: 15rem;
+  margin: 2rem; /* rem means 2 times the html font size */
+  letter-spacing: -1px;
+  color: #b8d1f5;
+}
+
+.photo-grid{
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+figure{
+  flex-basis: calc(33.33% - 4rem); /* Contains the initial size of posts*/
+  border: 2px solid #2c79f5;
+  padding: 2rem;
+  flex-grow: 1;  /* Specifies additional flex space required if flex item grows*/
+  margin: 0 2rem 2rem 2rem;
+}
+
+img{
+  width: calc(100% + 4rem);
+  margin: -2rem 0 0 -2rem;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  flex-basis: 48%;
+  border: 2px solid #f2f2f2;
+  color: red;
+  font-size: 15px;
+  line-height: 2;
+  padding: 5px;
+  cursor: pointer;
+}
