@@ -4,7 +4,8 @@ Notes for learning React JS and Redux. The Sections are as follows:
 
 - Intro
 - ES6 crash course 
-- React Intro and State Management
+- React Intro 
+- State Management
 - React Router
 - Redux
 - Firebase and Redux 
