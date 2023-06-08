@@ -112,8 +112,48 @@ const sentence = `My name is ${first_name} ${last_name}.` ;
 
 # Prototype Method
 
-This is ES5 stuff that was removed in ES6 with classes however, lets have a look at it. It is basic
+This is ES5 stuff that was removed in ES6 with classes however, lets have a look at it. It's a basic constructure method
+
+```js
+function Person(name, age){
+  this.name = name;
+  this.age = age;
+};
+
+Person.prototype.speak = function(){
+  console.log(`Hi this is ${this.name}`);
+};
+
+const bill = New Person("Bill", 20); // Definition of an Object with name and age 
+bill.speak()  // this works because we have defined speak for every Person
+```
 
 # Classes 
 
+```js
+class Person{
+    constructor(name, age){
+        this.name = name;
+        this.age = age; 
+    }
+    speak(){
+        console.log(`Hi this is ${this.name}`);
+    }
+}
+
+const bill = New Person("Bill", 20); // Definition of an Object with name and age 
+```
+
 # Spread Operator
+
+Spread operator is an operator that is used to loop through objects like arrays or collection of objects. Used in Redux mostly. 
+
+```js
+const names = ["A", "B", "C"];
+const names2 = ["D", "E", "F"];
+
+// To merge the lists using the spread opearator do 
+
+const allNames = [...names, "L", ...names2]
+```
+
