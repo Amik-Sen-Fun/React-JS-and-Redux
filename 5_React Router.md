@@ -107,7 +107,14 @@ Now, to route between these screens. There are basically two methods:
    
 - In any function if you want to redirect to some other page after the function has been executed, write the following syntax:
   ```js
-  function blahBlah(){
-      history.push('/'); // "/" can be any path 
+  // for loading multiple components 
+     <Route exact path = "/" render = {({history})=> (
+         <header className="App-header">
+           <h1>Photowall</h1>
+           <Photowall posts ={this.state.posts} onRemove={this.removePhoto} 
+           redirect={()=> history.push('/'); // "/" can be any path}
+           />
+         </header>
+     )}>
   }
   ```
