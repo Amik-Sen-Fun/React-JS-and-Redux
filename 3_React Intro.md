@@ -122,7 +122,7 @@ Now to achieve similar results using different files we do the following
         render(){
                 return (
                     <ol>
-                      { this.props.tasks.map((task, index)=> <li key: {index}> {task} </li>);}
+                      { this.props.tasks.sort((x,y) => y.id - x.id ).map((task, index)=> <li key: {index}> {task} </li>);}
                     </ol>
                 );
         }
