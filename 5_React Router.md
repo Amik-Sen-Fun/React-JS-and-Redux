@@ -105,4 +105,9 @@ Now, to route between these screens. There are basically two methods:
   }
    ```
    
-   
+- In any function if you want to redirect to some other page after the function has been executed, write the following syntax:
+  ```js
+  function blahBlah(){
+      history.push('/'); // "/" can be any path 
+  }
+  ```
