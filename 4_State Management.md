@@ -87,7 +87,7 @@ export default Photowall;
 
 - `constructor()`: Only use to initial values of state and is envoked while loading of component. 
 
-- `componentDidMount()`: It is envoked just after components are processed in the DOM once, then values are loaded in the state and then again DOM is rendered. 
+- `componentDidMount()`: It is envoked just after components are processed in the DOM once, then values are loaded in the state and then again DOM is rendered. Second rendor. 
   ```js
   componentDidMount(){
         const data = DbFetch();
@@ -98,5 +98,11 @@ export default Photowall;
   ```
   - Now the proper way to do API requests is to do it once the web app has been rendered and then mount the data. 
   - Trick: DidMount -> After components are Mounted in the DOM. 
+  - Another useful component `componentWillMount()`: Invoked before the first render. 
 
-- `componentDidMount()`: This envoked 
+- `componentDidUpdate()`: This envoked whenever a component is re-rendered, or whenever we update the state of a component to trigger a re-render. We can access the previous props and previous state of the application by passing them as function arguments as shown:
+   ```js
+   componentDidUpdate(prevProps, prevState){
+        console.log(this.state) // Prints the current state
+   }
+   ```
