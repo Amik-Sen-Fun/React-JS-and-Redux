@@ -32,7 +32,7 @@ For doing this define a `constructor` inside the `class` extending `component`
 To update `state` use the `this.setState()` function.
 
 - Also to call function from some child of child component, pass any method as `props` to child to child.
-- But `this` is not bound to the function. So we need to bind `this` in the `constructor()`. 
+- But `this` is not bound to the function. So we need to bind `this` in the `constructor()` as shown below: 
   ```js
   constructor(){
     super();
@@ -52,4 +52,51 @@ To update `state` use the `this.setState()` function.
     this.removePhoto = this.removePhoto.bind(this);
   }
   ```
+  
 # Prop Types
+
+This is an additional package that is used to do an assertion on prop-types.
+
+To install this use `npm install --save prop-types`.
+
+We have not used it in the application but after installation we use it as:
+
+```js
+import React from 'react';
+import Photo from './Photo';
+import PropTypes from 'prop-types'
+
+function Photowall(props){
+        return (
+            <div className='photo-grid'>
+               {props.posts.map((post, index)=> <Photo key = {index} post = {post} onRemove={props.onRemove}/>)}
+            </div>
+        );
+};
+
+Photowall.propTypes{
+        // Write the expected names of props
+        posts: PropTypes.array.isRequired,
+        OnRemove:  PropTypes.func.isRequired
+}
+
+export default Photowall;
+```
+
+# Lifecycle Methods
+
+- `constructor()`: Only use to initial values of state and is envoked while loading of component. 
+
+- `componentDidMount()`: It is envoked just after components are processed in the DOM once, then values are loaded in the state and then again DOM is rendered. 
+  ```js
+  componentDidMount(){
+        const data = DbFetch();
+        this.setStats({
+        posts: data,
+        });
+  }
+  ```
+  - Now the proper way to do API requests is to do it once the web app has been rendered and then mount the data. 
+  - Trick: DidMount -> After components are Mounted in the DOM. 
+
+- `componentDidMount()`: This envoked 
