@@ -106,3 +106,26 @@ export default Photowall;
         console.log(this.state) // Prints the current state
    }
    ```
+
+- On `handleSubmit` of a class the page gets reloaded after submitting a form, to stop that, pass the `event` parameter to that function.
+  ```js
+  constructor(){
+    super();
+    this.state = {
+      posts : [
+          {
+              name: 'Steve Jobs', 
+              url: 'https://drive.google.com/uc?export=view&id=1NY0vrn7GzlYHlKk7Rynlz21ee1Q_zGYc'
+          },
+    }
+    
+    // See here how to stop the reload after submitting any form
+    handleSubmit(event){
+        event.preventDefault();
+        console.log(event.target.elements.name.value); // prints the value of inputed named "name" of the form 
+        console.log(event.target.elements.age.value); // prints the value of inputed named "age" of the form 
+    }
+    
+    this.removePhoto = this.removePhoto.bind(this);
+  }
+  ```
