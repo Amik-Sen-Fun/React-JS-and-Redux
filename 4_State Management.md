@@ -121,7 +121,7 @@ export default Photowall;
     
     // See here how to stop the reload after submitting any form
     handleSubmit(event){
-        event.preventDefault();
+        event.preventDefault();                         // prevents page reload
         console.log(event.target.elements.name.value); // prints the value of inputed named "name" of the form 
         console.log(event.target.elements.age.value); // prints the value of inputed named "age" of the form 
     }
