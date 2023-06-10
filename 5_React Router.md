@@ -112,7 +112,7 @@ Now, to route between these screens. There are basically two methods:
          <header className="App-header">
            <h1>Photowall</h1>
            <Photowall posts ={this.state.posts} onRemove={this.removePhoto} 
-           redirect={()=> history.push('/'); // "/" can be any path}
+           redirect={()=> history.push('/');}  // "/" can be any path
            />
          </header>
      )}>
