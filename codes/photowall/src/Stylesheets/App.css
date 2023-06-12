@@ -51,3 +51,19 @@ button{
   padding: 5px;
   cursor: pointer;
 }
+
+.addButton{
+  padding: 30px;
+  display: table;
+  margin: 20px auto;
+  border: none;
+  cursor: pointer;
+  background: none;
+  
+}
+
+.Buttonspan{
+  font-size: 100px;
+  color: #242982;
+  
+}

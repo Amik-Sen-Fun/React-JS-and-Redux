@@ -29,6 +29,15 @@ class App extends Component{
           },
       ]
     }
+
+    this.removePhoto = this.removePhoto.bind(this);
+  }
+
+  removePhoto(postRemove){
+      console.log(postRemove.name);
+      this.setState((state) => ({
+          posts: state.posts.filter(post => post !== postRemove)
+      }));
   }
 
   render(){
@@ -36,7 +45,7 @@ class App extends Component{
       <div className="App">
         <header className="App-header">
           <h1>Photowall</h1>
-          <Photowall posts ={this.state.posts}/>
+          <Photowall posts ={this.state.posts} onRemove={this.removePhoto}/>
         </header>
       </div>
     );
