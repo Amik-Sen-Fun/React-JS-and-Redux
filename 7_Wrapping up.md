@@ -4,4 +4,5 @@
   - use this in the store as
     `store = createStore(applyMiddleware(thunk), ...)`  
     
- ![alt text](http://url/to/img.png)
+ - Find the snapshot to add and load post from firebase: 
+  ![alt text](https://github.com/Amik-Sen-Fun/React-JS-and-Redux/blob/main/API%20calls%20firebase.png)
