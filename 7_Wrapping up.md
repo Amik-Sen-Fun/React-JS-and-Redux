@@ -5,4 +5,5 @@
     `store = createStore(applyMiddleware(thunk), ...)`  
     
  - Find the snapshot to add and load post from firebase: 
-  ![alt text](https://github.com/Amik-Sen-Fun/React-JS-and-Redux/blob/main/API%20calls%20firebase.png)
+ 
+ ![alt text](https://github.com/Amik-Sen-Fun/React-JS-and-Redux/blob/main/API%20calls%20firebase.png)
